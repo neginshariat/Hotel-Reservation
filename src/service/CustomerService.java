@@ -13,7 +13,8 @@ public class CustomerService {
         Customer customer1= new Customer(firstName, lastName, email);
     }
     public Customer getCustomer(String customerEmail){
-        Customer customer1= new Customer(firstName, lastName, customerEmail);
+        //Customer customer1= new Customer(firstName, lastName, customerEmail);
+        Customer customer1= new Customer(customer.getFirstName(), customer.getLastName(), customerEmail);
         return customer1;
     }
     public static Collection<Customer> getAllCustomer(){
