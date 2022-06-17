@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class CustomerService {
-    private Customer customer;
+    private static Customer customer;
     private String firstName;
     private String lastName;
     public void addCustomer(String firstName, String lastName, String email){
@@ -16,7 +16,7 @@ public class CustomerService {
         Customer customer1= new Customer(firstName, lastName, customerEmail);
         return customer1;
     }
-    public Collection<Customer> getAllCustomer(){
+    public static Collection<Customer> getAllCustomer(){
         Collection<Customer> customers = new ArrayList<>();
         customers.add(customer);
         return customers;
