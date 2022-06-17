@@ -2,6 +2,7 @@ package service;
 
 import model.Customer;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class CustomerService {
@@ -9,12 +10,15 @@ public class CustomerService {
     private String firstName;
     private String lastName;
     public void addCustomer(String firstName, String lastName, String email){
-        Customer newCustomer = new Customer(firstName,lastName,email);
+        Customer customer1= new Customer(firstName, lastName, email);
     }
     public Customer getCustomer(String customerEmail){
-        return customer;
+        Customer customer1= new Customer(firstName, lastName, customerEmail);
+        return customer1;
     }
     public Collection<Customer> getAllCustomer(){
-        Customer modelCustomer= new Customer();
+        Collection<Customer> customers = new ArrayList<>();
+        customers.add(customer);
+        return customers;
     }
 }
