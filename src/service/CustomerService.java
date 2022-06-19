@@ -4,13 +4,16 @@ import model.Customer;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class CustomerService {
     private static Customer customer;
+    private final static List<Customer> customerList= new ArrayList<>();
     private String firstName;
     private String lastName;
     public void addCustomer(String firstName, String lastName, String email){
         Customer customer1= new Customer(firstName, lastName, email);
+        customerList.add(customer1);
     }
     public Customer getCustomer(String customerEmail){
         //Customer customer1= new Customer(firstName, lastName, customerEmail);
@@ -18,8 +21,6 @@ public class CustomerService {
         return customer1;
     }
     public static Collection<Customer> getAllCustomer(){
-        Collection<Customer> customers = new ArrayList<>();
-        customers.add(customer);
-        return customers;
+        return customerList;
     }
 }
