@@ -64,7 +64,7 @@ public class ReservationService {
         if (reservations1.isEmpty()){
             System.out.println("There is no reservation.");
         }else {
-            System.out.println(reservations1+"⁄n");
+            System.out.println(reservations1);
         }
     }
     public Collection<IRoom> findAlternativeRooms(final Date checkInDate, final Date checkOutDate) {
