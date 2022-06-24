@@ -67,6 +67,9 @@ public class ReservationService {
             System.out.println(reservations1+"⁄n");
         }
     }
+    public Collection<IRoom> findAlternativeRooms(final Date checkInDate, final Date checkOutDate) {
+        return findAvailableRooms(addDefaultPlusDays(checkInDate), addDefaultPlusDays(checkOutDate));
+    }
     public Date addDefaultPlusDays(Date date){
         Calendar calendar= Calendar.getInstance();
         calendar.setTime(date);
