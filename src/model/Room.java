@@ -1,29 +1,11 @@
 package model;
 
 public class Room implements IRoom{
-    private String roomNumber;
-    private Double price;
-    private RoomType enumeration;
+    private final String roomNumber;
+    private final Double price;
+    private final RoomType enumeration;
 
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public RoomType getEnumeration() {
-        return enumeration;
-    }
-
-    public void setEnumeration(RoomType enumeration) {
-        this.enumeration = enumeration;
-    }
 
     public Room(String roomNumber, Double price, RoomType enumeration) {
         this.roomNumber = roomNumber;

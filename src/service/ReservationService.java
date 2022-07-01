@@ -30,7 +30,7 @@ public class ReservationService {
         return rooms.values();
     }
     public Reservation reserveRoom(Customer customer, IRoom room, Date checkInDate, Date checkOutDate){
-        Reservation reservation= new Reservation(customer,room,checkInDate,checkOutDate);
+        final Reservation reservation= new Reservation(customer,room,checkInDate,checkOutDate);
         Collection<Reservation> customerReservations= getCustomerReservation(customer);
         if (customerReservations == null){
             customerReservations = new LinkedList<>();
@@ -46,8 +46,8 @@ public class ReservationService {
 
 
     public Collection<IRoom> findAvailableRooms(Date checkInDate,Date checkOutDate){
-
-        for (Reservation reservation:getAllReservations()){
+        final Collection<Reservation> allReservations = getAllReservations();
+        for (Reservation reservation:allReservations){
             if (reservationOverLaps(reservation,checkInDate,checkOutDate)){
                 notAvailableRooms.add(reservation.getRoom());
             }
@@ -64,7 +64,7 @@ public class ReservationService {
         if (reservations1.isEmpty()){
             System.out.println("There is no reservation.");
         }else {
-            System.out.println(reservations1);
+            System.out.println(reservations1 +"\n" );
         }
     }
     public Collection<IRoom> findAlternativeRooms(final Date checkInDate, final Date checkOutDate) {

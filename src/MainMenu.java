@@ -4,6 +4,7 @@ import model.Reservation;
 
 import java.io.SequenceInputStream;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Scanner;
@@ -77,6 +78,12 @@ public class MainMenu {
         }
     }
     private static Date getInputDate(final Scanner scanner) {
+        try{
+            return new SimpleDateFormat(DATE_INPUT).parse(scanner.nextLine());
+        }catch (ParseException ex){
+            System.out.println("Error: invalid date");
+            findAndReserveRoom();
+        }
 
         return null;
     }
