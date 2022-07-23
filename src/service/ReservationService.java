@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ReservationService {
 
-    private static final int RECOMMENDED_ROOMS_DEFAULT_PLUS_DAYS = 7;
+    private static final int ROOMS_DEFAULT = 7;
 
     private final Collection<IRoom> notAvailableRooms = new LinkedList<>();
     private static final ReservationService reservationService= new ReservationService();
@@ -73,7 +73,7 @@ public class ReservationService {
     public Date addDefaultPlusDays(Date date){
         Calendar calendar= Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(calendar.DATE,RECOMMENDED_ROOMS_DEFAULT_PLUS_DAYS);
+        calendar.add(calendar.DATE,ROOMS_DEFAULT);
         return calendar.getTime();
     }
     public Collection<IRoom> findRooms(Date checkInDate, Date checkOutDate){
